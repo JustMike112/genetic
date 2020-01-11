@@ -1,0 +1,11 @@
+D:\School\Jaar_5\Data Science\Genetic Algorithms\Assignment2-GeneticAlgorithms\Assignment2-GeneticAlgorithms\bin\Debug\netcoreapp2.0\Assignment2-GeneticAlgorithms.deps.json
+D:\School\Jaar_5\Data Science\Genetic Algorithms\Assignment2-GeneticAlgorithms\Assignment2-GeneticAlgorithms\bin\Debug\netcoreapp2.0\Assignment2-GeneticAlgorithms.runtimeconfig.json
+D:\School\Jaar_5\Data Science\Genetic Algorithms\Assignment2-GeneticAlgorithms\Assignment2-GeneticAlgorithms\bin\Debug\netcoreapp2.0\Assignment2-GeneticAlgorithms.runtimeconfig.dev.json
+D:\School\Jaar_5\Data Science\Genetic Algorithms\Assignment2-GeneticAlgorithms\Assignment2-GeneticAlgorithms\bin\Debug\netcoreapp2.0\Assignment2-GeneticAlgorithms.dll
+D:\School\Jaar_5\Data Science\Genetic Algorithms\Assignment2-GeneticAlgorithms\Assignment2-GeneticAlgorithms\bin\Debug\netcoreapp2.0\Assignment2-GeneticAlgorithms.pdb
+D:\School\Jaar_5\Data Science\Genetic Algorithms\Assignment2-GeneticAlgorithms\Assignment2-GeneticAlgorithms\obj\Debug\netcoreapp2.0\Assignment2-GeneticAlgorithms.csprojAssemblyReference.cache
+D:\School\Jaar_5\Data Science\Genetic Algorithms\Assignment2-GeneticAlgorithms\Assignment2-GeneticAlgorithms\obj\Debug\netcoreapp2.0\Assignment2-GeneticAlgorithms.csproj.CoreCompileInputs.cache
+D:\School\Jaar_5\Data Science\Genetic Algorithms\Assignment2-GeneticAlgorithms\Assignment2-GeneticAlgorithms\obj\Debug\netcoreapp2.0\Assignment2-GeneticAlgorithms.AssemblyInfoInputs.cache
+D:\School\Jaar_5\Data Science\Genetic Algorithms\Assignment2-GeneticAlgorithms\Assignment2-GeneticAlgorithms\obj\Debug\netcoreapp2.0\Assignment2-GeneticAlgorithms.AssemblyInfo.cs
+D:\School\Jaar_5\Data Science\Genetic Algorithms\Assignment2-GeneticAlgorithms\Assignment2-GeneticAlgorithms\obj\Debug\netcoreapp2.0\Assignment2-GeneticAlgorithms.dll
+D:\School\Jaar_5\Data Science\Genetic Algorithms\Assignment2-GeneticAlgorithms\Assignment2-GeneticAlgorithms\obj\Debug\netcoreapp2.0\Assignment2-GeneticAlgorithms.pdb
