@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using Assignment2_GeneticAlgorithms.Utils;
@@ -25,12 +26,14 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
             List<double> fitnesses = new List<double>();
             for (int i = 0; i < population.Count; i++)
             {
-                fitnesses.Add(Fitness(population[i]));
+                population[i].fitness = Fitness(population[i]);
             }
 
-            for (int i = 0; i < fitnesses.Count; i++)
+            population = population.OrderBy(x => x.fitness).ToList();
+
+            for (int i = 0; i < population.Count; i++)
             {
-                Console.WriteLine(fitnesses[i]);
+                Console.WriteLine(i + " " + population[i].fitness);
             }
 
             //for (int i = 0; i < k; i++)
@@ -54,9 +57,9 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
             return population;
         }
 
+        // Calculate the fitness per Individual
         public double Fitness(Seed seed)
         {
-            // Calculate the fitness per Individual
             double fitness = 0.0;
 
             for (int i = 0; i < trainingData.Count; i++)
