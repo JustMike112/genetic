@@ -9,11 +9,9 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
     {
         private int crossoverPoint;
 
-        public SinglePointCrossover() { }
-
-        public SinglePointCrossover(int CrossoverPoint)
+        public SinglePointCrossover(int crossoverPoint)
         {
-            crossoverPoint = CrossoverPoint;
+            this.crossoverPoint = crossoverPoint;
         }
 
         public Tuple<Seed, Seed> Crossover(Seed parent1, Seed parent2)
@@ -24,13 +22,13 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
             {
                 if (i + 1 < crossoverPoint)
                 {
-                    child1[i] = parent1.attributes[i];
-                    child2[i] = parent2.attributes[i];
+                    child1.Add(parent1.attributes[i]);
+                    child2.Add(parent2.attributes[i]);
                 }
                 else
                 {
-                    child1[i] = parent2.attributes[i];
-                    child2[i] = parent1.attributes[i];
+                    child1.Add(parent2.attributes[i]);
+                    child2.Add(parent1.attributes[i]);
                 }
             }
 

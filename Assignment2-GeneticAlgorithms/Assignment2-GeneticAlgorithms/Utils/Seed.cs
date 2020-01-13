@@ -15,9 +15,9 @@ namespace Assignment2_GeneticAlgorithms.Utils
             FillAttributes();
         }
 
-        public Seed(List<double> Attributes)
+        public Seed(List<double> attributes)
         {
-            attributes = Attributes;
+            this.attributes = attributes;
         }
 
         private double RandomAttribute(int min, int max)
