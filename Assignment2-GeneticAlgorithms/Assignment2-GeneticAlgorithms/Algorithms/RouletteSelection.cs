@@ -27,7 +27,7 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
             for (int i = 0; i < population.Count; i++)
             {
                 double cumulative = 0.0;
-                double randomValue = random.NextDouble() * sum;
+                double randomValue = random.NextDouble() * sum; // random value between 0 and max cumulative value
                 for (int j = 0; j < boundaryValues.Count; j++)
                 {
                     cumulative += boundaryValues[j];
