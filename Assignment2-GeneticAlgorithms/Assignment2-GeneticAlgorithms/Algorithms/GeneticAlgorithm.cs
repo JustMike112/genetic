@@ -36,14 +36,16 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
                 Console.WriteLine(i + " " + population[i].fitness);
             }
 
-            //for (int i = 0; i < k; i++)
-            //{
-            //    // fitness
-            //    // selection
-            //    // crossover
-            //    // mutation
-            //    // use elitism to bring the best solution to the next population
-            //}
+            for (int i = 0; i < k; i++)
+            {
+                Seed elite = population.OrderBy(x => x.fitness).ToList().First();
+
+                // fitness
+                // selection
+                // crossover
+                // mutation
+                // use elitism to bring the best solution to the next population
+            }
         }
 
         private List<Seed> GeneratePopulation(int size)
@@ -76,12 +78,6 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
 
             return fitness;
         }
-
-        //public Tuple<Ind, Ind> Selection(ISelection selectionMethod)
-        //{
-        //    // Select individuals for crossover
-        //    return selectionMethod.Selection(population, 50);
-        //}
 
         public Tuple<Seed, Seed> Crossover(Seed parent1, Seed parent2)
         {
