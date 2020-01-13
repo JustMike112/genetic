@@ -7,6 +7,6 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
 {
     interface ISelection
     {
-        Seed[] Selection(Seed[] population, int size);
+        List<Seed> Selection(List<Seed> population);
     }
 }
