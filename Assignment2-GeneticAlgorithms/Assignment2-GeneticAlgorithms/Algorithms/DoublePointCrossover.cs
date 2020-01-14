@@ -9,15 +9,21 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
     {
         private int firstCrossoverPoint;
         private int secondCrossoverPoint;
+        private double crossoverRate;
+        private Random random = new Random();
 
-        public DoublePointCrossover(int FirstCrossoverPoint, int SecondCrossoverPoint)
+        public DoublePointCrossover(int firstCrossoverPoint, int secondCrossoverPoint, double crossoverRate)
         {
-            firstCrossoverPoint = FirstCrossoverPoint;
-            secondCrossoverPoint = SecondCrossoverPoint;
+            this.firstCrossoverPoint = firstCrossoverPoint;
+            this.secondCrossoverPoint = secondCrossoverPoint;
+            this.crossoverRate = crossoverRate;
         }
 
         public Tuple<Seed, Seed> Crossover(Seed parent1, Seed parent2)
         {
+            if (random.NextDouble() >= crossoverRate)
+                return new Tuple<Seed, Seed>(parent1, parent2);
+
             List<double> child1 = new List<double>();
             List<double> child2 = new List<double>();
             for (int i = 0; i < 19; i++)

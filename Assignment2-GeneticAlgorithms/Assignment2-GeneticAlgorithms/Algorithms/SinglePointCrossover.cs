@@ -8,14 +8,20 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
     class SinglePointCrossover : ICrossover
     {
         private int crossoverPoint;
+        private double crossoverRate;
+        private Random random = new Random();
 
-        public SinglePointCrossover(int crossoverPoint)
+        public SinglePointCrossover(int crossoverPoint, double crossoverRate)
         {
             this.crossoverPoint = crossoverPoint;
+            this.crossoverRate = crossoverRate;
         }
 
         public Tuple<Seed, Seed> Crossover(Seed parent1, Seed parent2)
         {
+            if (random.NextDouble() >= crossoverRate)
+                return new Tuple<Seed, Seed>(parent1, parent2);
+
             List<double> child1 = new List<double>();
             List<double> child2 = new List<double>();
             for (int i = 0; i < 19; i++)

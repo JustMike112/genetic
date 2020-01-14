@@ -8,6 +8,8 @@ namespace Assignment2_GeneticAlgorithms.Utils
     {
         public List<double> attributes;
         public double fitness;
+        private int min = -1;
+        private int max = 1;
 
         public Seed()
         {
@@ -19,8 +21,13 @@ namespace Assignment2_GeneticAlgorithms.Utils
         {
             this.attributes = attributes;
         }
+        public Seed(List<double> attributes, double fitness)
+        {
+            this.attributes = attributes;
+            this.fitness = fitness;
+        }
 
-        private double RandomAttribute(int min, int max)
+        public double RandomAttribute()
         {
             Random random = new Random();
             return random.NextDouble() * (max - min) + min;
@@ -30,7 +37,7 @@ namespace Assignment2_GeneticAlgorithms.Utils
         {
             for (int i = 0; i < 19; i++)
             {
-                attributes.Add(RandomAttribute(-1, 1));
+                attributes.Add(RandomAttribute());
             }
         }
     }

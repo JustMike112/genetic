@@ -11,7 +11,7 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
         private List<Customer> trainingData = new List<Customer>();
         private int k = 100;
         private int size = 40;
-        private double selectionRate = 0.85;
+        private double crossoverRate = 0.85;
         private double mutationRate = 0.05;
 
         public GeneticAlgorithm(List<Customer> customers)
@@ -23,28 +23,41 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
         {
             // Main loop
             List<Seed> population = GeneratePopulation(size);
-            List<double> fitnesses = new List<double>();
+            ISelection selection = new RouletteSelection();
+            ICrossover crossover = new SinglePointCrossover(population.First().attributes.Count / 2, crossoverRate);
+            Seed elite;
+
             for (int i = 0; i < population.Count; i++)
             {
                 population[i].fitness = Fitness(population[i]);
             }
 
-            population = population.OrderBy(x => x.fitness).ToList();
-
-            for (int i = 0; i < population.Count; i++)
-            {
-                Console.WriteLine(i + " " + population[i].fitness);
-            }
-
             for (int i = 0; i < k; i++)
             {
-                Seed elite = population.OrderBy(x => x.fitness).ToList().First();
+                population = population.OrderBy(x => x.fitness).ToList(); // sort
+                elite = new Seed(population.First().attributes, population.First().fitness); // elitism
+                population = selection.Selection(population); // selection
+                
+                for (int j = 0; j < population.Count; j += 2) // crossover
+                {
+                    Tuple<Seed, Seed> children = crossover.Crossover(population[j], population[j + 1]);
+                    population[j] = children.Item1;
+                    population[j + 1] = children.Item2;
+                }
 
-                // fitness
-                // selection
-                // crossover
-                // mutation
-                // use elitism to bring the best solution to the next population
+                for (int j = 0; j < population.Count; j++) // mutate
+                {
+                    population[j] = Mutate(population[j]);
+                }
+
+                for (int j = 0; j < population.Count; j++) // recalculate fitness
+                {
+                    population[j].fitness = Fitness(population[j]);
+                }
+
+                population = population.OrderBy(x => x.fitness).ToList(); // sort again
+                population[population.Count - 1] = elite; // replace the worst seed
+                Console.WriteLine("elite = " + elite.fitness + ", fitness = " + population.OrderBy(x => x.fitness).ToList().First().fitness);
             }
         }
 
@@ -87,6 +100,21 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
             Seed child2 = new Seed();
 
             return new Tuple<Seed, Seed>(child1, child2);
+        }
+
+        public Seed Mutate(Seed seed)
+        {
+            Random random = new Random();
+            for (int i = 0; i < seed.attributes.Count; i++)
+            {
+                double randomValue = random.NextDouble();
+                if (randomValue < mutationRate)
+                {
+                    seed.attributes[i] = seed.RandomAttribute();
+                }
+            }
+
+            return seed;
         }
 
 
