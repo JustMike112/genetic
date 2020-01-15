@@ -34,7 +34,7 @@ namespace Assignment2_GeneticAlgorithms
             var customers = pregnant.Take(50).ToList();
             customers.AddRange(notPregnant.Take(50).ToList());
             GeneticAlgorithm gen = new GeneticAlgorithm(customers);
-            gen.main();
+            gen.Main();
 
             //Console.WriteLine(19 / 2);
 

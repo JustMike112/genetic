@@ -8,18 +8,18 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
 {
     class GeneticAlgorithm
     {
-        private List<Customer> trainingData = new List<Customer>();
-        private int k = 100;
-        private int size = 40;
-        private double crossoverRate = 0.85;
-        private double mutationRate = 0.05;
+        private List<Customer> trainingData;
+        private readonly int k = 100;
+        private readonly int size = 40;
+        private readonly double crossoverRate = 0.85;
+        private readonly double mutationRate = 0.05;
 
         public GeneticAlgorithm(List<Customer> customers)
         {
             trainingData = customers;
         }
 
-        public void main()
+        public void Main()
         {
             // Main loop
             List<Seed> population = GeneratePopulation(size);
@@ -92,16 +92,6 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
             return fitness;
         }
 
-        public Tuple<Seed, Seed> Crossover(Seed parent1, Seed parent2)
-        {
-            // Crossover, with elitism, and create two children
-
-            Seed child1 = new Seed(/* attributes */);
-            Seed child2 = new Seed();
-
-            return new Tuple<Seed, Seed>(child1, child2);
-        }
-
         public Seed Mutate(Seed seed)
         {
             Random random = new Random();
@@ -116,7 +106,5 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
 
             return seed;
         }
-
-
     }
 }
