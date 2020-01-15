@@ -8,8 +8,8 @@ namespace Assignment2_GeneticAlgorithms.Utils
     {
         public List<double> attributes;
         public double fitness;
-        private int min = -1;
-        private int max = 1;
+        private readonly double min = -1;
+        private readonly double max = 1;
 
         public Seed()
         {

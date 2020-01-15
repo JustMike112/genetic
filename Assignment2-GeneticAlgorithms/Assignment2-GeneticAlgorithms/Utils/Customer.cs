@@ -10,11 +10,5 @@ namespace Assignment2_GeneticAlgorithms.Utils
         public int pregnant;
 
         public Customer() { }
-
-        public Customer(List<double> Attributes, int Pregnant)
-        {
-            attributes = Attributes;
-            Pregnant = pregnant;
-        }
     }
 }
