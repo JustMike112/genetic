@@ -3,3 +3,5 @@
 ################################################################################
 
 /Assignment2-GeneticAlgorithms/.vs/Assignment2-GeneticAlgorithms/v15
+/Assignment2-GeneticAlgorithms/obj/*
+/Assignment2-GeneticAlgorithms/bin/*

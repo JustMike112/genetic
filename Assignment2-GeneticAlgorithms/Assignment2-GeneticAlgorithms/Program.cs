@@ -36,6 +36,33 @@ namespace Assignment2_GeneticAlgorithms
             GeneticAlgorithm gen = new GeneticAlgorithm(customers);
             gen.Main();
 
+            var f = gen.Prediction(pop.Last());
+            Console.WriteLine(f);
+            Console.WriteLine(f == pop.Last().pregnant);
+
+            var predictions = new List<int>();
+            var correct = new List<bool>();
+            var wrong = new List<bool>();
+            for (int i = 0; i < pop.Count; i++)
+            {
+                var p = gen.Prediction(pop[i]);
+                if (p == pop[i].pregnant)
+                {
+                    if (p == 1)
+                        correct.Add(true);
+                    else
+                        correct.Add(false);
+                }
+                else
+                {
+                    wrong.Add(false);
+                }
+
+            }
+
+            Console.WriteLine(correct.Count);
+
+
             //Console.WriteLine(19 / 2);
 
             //Seed x = new Seed(new List<double> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 });

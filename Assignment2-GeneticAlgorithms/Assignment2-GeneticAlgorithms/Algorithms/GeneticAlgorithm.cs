@@ -13,6 +13,7 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
         private readonly int size = 40;
         private readonly double crossoverRate = 0.85;
         private readonly double mutationRate = 0.05;
+        Seed topSeed;
 
         public GeneticAlgorithm(List<Customer> customers)
         {
@@ -105,6 +106,25 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
             }
 
             return seed;
+        }
+
+        public int Prediction(Customer customer)
+        {
+            double prediction = 0.0;
+            double cutoffRate = 0.85;
+            for (int i = 0; i < customer.attributes.Count; i++)
+            {
+                prediction += customer.attributes[i] * topSeed.attributes[i];
+            }
+
+            var squared = Math.Pow(prediction, 2);
+
+            Console.WriteLine(prediction);
+
+            if (prediction > cutoffRate)
+                return 1;
+            else
+                return 0;
         }
     }
 }
