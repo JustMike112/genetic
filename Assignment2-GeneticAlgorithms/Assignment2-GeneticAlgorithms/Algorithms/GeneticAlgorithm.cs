@@ -60,6 +60,8 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
                 population[population.Count - 1] = elite; // replace the worst seed
                 Console.WriteLine("elite = " + elite.fitness + ", fitness = " + population.OrderBy(x => x.fitness).ToList().First().fitness);
             }
+
+            topSeed = population.OrderBy(x => x.fitness).ToList().First();
         }
 
         private List<Seed> GeneratePopulation(int size)
@@ -116,10 +118,6 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
             {
                 prediction += customer.attributes[i] * topSeed.attributes[i];
             }
-
-            var squared = Math.Pow(prediction, 2);
-
-            Console.WriteLine(prediction);
 
             if (prediction > cutoffRate)
                 return 1;
