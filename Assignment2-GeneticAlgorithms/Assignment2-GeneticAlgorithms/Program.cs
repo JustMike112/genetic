@@ -35,11 +35,7 @@ namespace Assignment2_GeneticAlgorithms
             customers.AddRange(notPregnant.Take(50).ToList());
             GeneticAlgorithm gen = new GeneticAlgorithm(customers);
             gen.Main();
-
-            var f = gen.Prediction(pop.Last());
-            Console.WriteLine(f);
-            Console.WriteLine(f == pop.Last().pregnant);
-
+            
             var predictions = new List<int>();
             var correct = new List<bool>();
             var wrong = new List<bool>();
@@ -48,10 +44,7 @@ namespace Assignment2_GeneticAlgorithms
                 var p = gen.Prediction(pop[i]);
                 if (p == pop[i].pregnant)
                 {
-                    if (p == 1)
-                        correct.Add(true);
-                    else
-                        correct.Add(false);
+                    correct.Add(true);
                 }
                 else
                 {
@@ -138,12 +131,6 @@ namespace Assignment2_GeneticAlgorithms
             //}
 
             Console.ReadLine();
-        }
-
-        private static double randomized(int min, int max)
-        {
-            Random random = new Random();
-            return random.NextDouble() * (max - min) + min;
         }
     }
 }

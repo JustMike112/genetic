@@ -61,7 +61,8 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
                 Console.WriteLine("elite = " + elite.fitness + ", fitness = " + population.OrderBy(x => x.fitness).ToList().First().fitness);
             }
 
-            topSeed = population.OrderBy(x => x.fitness).ToList().First();
+            if (topSeed == null || topSeed.fitness > population.OrderBy(x => x.fitness).ToList().First().fitness)
+                topSeed = population.OrderBy(x => x.fitness).ToList().First();
         }
 
         private List<Seed> GeneratePopulation(int size)
@@ -88,6 +89,7 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
                 {
                     prediction += trainingData[i].attributes[j] * seed.attributes[j];
                 }
+                
                 squaredError = Math.Pow((trainingData[i].pregnant - prediction), 2);
                 fitness += squaredError;
             }
@@ -112,13 +114,14 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
 
         public int Prediction(Customer customer)
         {
-            double prediction = 0.0;
+            double prediction = 1.0;
             double cutoffRate = 0.85;
             for (int i = 0; i < customer.attributes.Count; i++)
             {
                 prediction += customer.attributes[i] * topSeed.attributes[i];
             }
 
+            //double predictionAfterLinkFunction = Math.Exp(prediction) / (1 + Math.Exp(prediction));
             if (prediction > cutoffRate)
                 return 1;
             else
