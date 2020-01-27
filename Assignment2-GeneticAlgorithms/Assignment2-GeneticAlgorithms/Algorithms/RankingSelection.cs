@@ -15,7 +15,7 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
             List<Seed> selected = new List<Seed>();
             Random random = new Random();
             population = population.OrderBy(x => x.fitness).ToList();
-            int maxCumulative = (population.Count * (population.Count + 1)) / 2; // max value for boundaries -> (n * (n+2)) / 2
+            int maxCumulative = (population.Count * (population.Count + 1)) / 2; // max value for boundaries
 
             for (int i = 0; i < population.Count; i++) // loop to get an entire new population
             {

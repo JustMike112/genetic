@@ -24,7 +24,7 @@ namespace Assignment2_GeneticAlgorithms.Algorithms
 
             List<double> child1 = new List<double>();
             List<double> child2 = new List<double>();
-            for (int i = 0; i < 19; i++)
+            for (int i = 0; i < parent1.attributes.Count; i++)
             {
                 if (i + 1 < crossoverPoint)
                 {

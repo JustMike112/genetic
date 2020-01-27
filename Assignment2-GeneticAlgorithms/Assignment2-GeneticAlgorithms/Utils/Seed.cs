@@ -21,6 +21,7 @@ namespace Assignment2_GeneticAlgorithms.Utils
         {
             this.attributes = attributes;
         }
+
         public Seed(List<double> attributes, double fitness)
         {
             this.attributes = attributes;
@@ -35,7 +36,7 @@ namespace Assignment2_GeneticAlgorithms.Utils
 
         private void FillAttributes()
         {
-            for (int i = 0; i < 19; i++)
+            for (int i = 0; i < 20; i++)
             {
                 attributes.Add(RandomAttribute());
             }

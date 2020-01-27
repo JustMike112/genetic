@@ -33,6 +33,7 @@ namespace Assignment2_GeneticAlgorithms.Utils
                             customer.pregnant = 1;
                     }
                 }
+                attributes.Add(1); // intercept
                 customer.attributes = attributes;
                 population.Add(customer);
             }
